@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/headingTextView"
+        android:text="Unit Converter"
+        android:textSize="38sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/valueEditText"
+        android:hint="Enter the value to be converted"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingTextView"
+        android:layout_marginHorizontal="35sp"
+        android:layout_marginTop="20sp"/>
+
+    <RadioGroup
+        android:id="@+id/optionRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/valueEditText"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:id="@+id/radioTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature"/>
+        <RadioButton
+            android:id="@+id/radioLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Length"/>
+        <RadioButton
+            android:id="@+id/radioWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"/>
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/optionRadioGroup"
+        android:layout_marginTop="20sp">
+        <Spinner
+            android:id="@+id/sourceUnitSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="35sp"/>
+
+        <Spinner
+            android:id="@+id/destUnitSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Convert"
+        android:layout_below="@+id/spinnerLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35sp"/>
+
+    <TextView
+        android:id="@+id/resultLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click convert to see the result"
+        android:textSize="26sp"
+        android:textColor="#055930"
+        android:layout_below="@+id/convertButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35sp"/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#048043"
+        android:text=""
+        android:layout_below="@+id/resultLabelTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"/>
+
+</RelativeLayout>
