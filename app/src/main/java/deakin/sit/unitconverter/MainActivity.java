@@ -1,5 +1,6 @@
 package deakin.sit.unitconverter;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         mResultTextView = findViewById(R.id.resultTextView);
         mResultLabelTextView = findViewById(R.id.resultLabelTextView);
 
+        // Set result text color to green (default)
+        mResultTextView.setTextColor(Color.rgb(4, 128, 68));
         // Init adapters for spinner
         initLengthArrayAdapter();
         initWeightArrayAdapter();
@@ -104,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (inputString.isEmpty()) {
                     mResultTextView.setText("Please enter your value");
+                    // Set result text color to red
+                    mResultTextView.setTextColor(Color.RED);
                 } else {
                     try {
                         // Convert value to double
@@ -117,8 +122,12 @@ public class MainActivity extends AppCompatActivity {
                         mResultLabelTextView.setText(sourceUnit + " -> " + destUnit);
 
                         convertValue(inputVal, sourceUnit, destUnit);
+                        // Set result text color to green
+                        mResultTextView.setTextColor(Color.rgb(4, 128, 68));
                     } catch (NumberFormatException e){
                         mResultTextView.setText("Invalid number");
+                        // Set result text color to red
+                        mResultTextView.setTextColor(Color.RED);
                     }
                 }
             }
@@ -166,6 +175,8 @@ public class MainActivity extends AppCompatActivity {
         // Invalid conversion
         else {
             mResultTextView.setText("Destination unit is not supported");
+            // Set result text color to red
+            mResultTextView.setTextColor(Color.RED);
         }
     }
 
